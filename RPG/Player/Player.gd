@@ -36,10 +36,10 @@ func _physics_process(delta): #innebyd funksjon som er relatert til fysikken i s
 
 		
 func move_state(delta): #funksjon for movement
-	var input_vector = Vector2.ZERO
+	var input_vector = Vector2.ZERO #hvis "ui_right"- har en styrke på 1 og "ui_left"- har en styrke på 0, vil x-komponenten til input_vector settes til 1 - 0 = 1.
 	input_vector.x = Input.get_action_strength("ui_right") - Input.get_action_strength("ui_left")
 	input_vector.y = Input.get_action_strength("ui_down") - Input.get_action_strength("ui_up")
-	input_vector = input_vector.normalized()
+	input_vector = input_vector.normalized() #normaliserer jeg vector - lenge = 1
 	
 	
 	if input_vector != Vector2.ZERO:
